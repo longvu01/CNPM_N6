@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #8d6767;
+  --secondary-color: #793d3d;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1630px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 15px;
+}
+textarea {
+  resize: none;
+}
