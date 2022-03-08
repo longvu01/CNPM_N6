@@ -1,23 +1,28 @@
 <?php
     session_start();
     require_once("../connect.php");
-
-    // $_SESSION['id'] = 1;
-    // $id = $_SESSION['id'];
+    // Kiểm tra quyền có phải quản trị viên ?
+    // Fake trước khi làm chức năng đăng nhập
+    $_SESSION['role'] = 1;
+    $_SESSION['id'] = 1;
+    // 
+    $role = $_SESSION['role'];
+    $id = $_SESSION['id'];
+    require_once("../root/check_permission_admin.php");
 
     mysqli_close($conn);
 ?>
 
 <!-- Start HTML -->
     <?php require_once ('../root/top.php')?>
-    <?php top('Thêm hàng hóa') ?>
+    <?php top('Sửa thông tin nhân viên') ?>
 </head>
 <body>
     <div id="toast"></div>
     <?php require_once ('../root/header.php')?>
     <?php require_once ('../root/menu.php')?>
 
-    <!-- Code thêm hàng hóa-->
+  
 
     <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>

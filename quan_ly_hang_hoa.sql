@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 06, 2022 at 10:33 AM
+-- Generation Time: Mar 08, 2022 at 03:13 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.21
 
@@ -32,11 +32,14 @@ USE `quan_ly_hang_hoa`;
 DROP TABLE IF EXISTS `chi_tiet_hoa_don_nhap_kho`;
 CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don_nhap_kho` (
   `ma` int(11) NOT NULL AUTO_INCREMENT,
+  `ma_hoa_don_nhap_kho` int(11) NOT NULL,
+  `ma_hang_hoa` int(11) NOT NULL,
   `so_luong` int(11) NOT NULL,
-  `ma_hang` int(11) NOT NULL,
   `don_gia` int(11) NOT NULL,
   `vi_tri_kho` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
+  PRIMARY KEY (`ma`),
+  KEY `ma_hoa_don_nhap_kho` (`ma_hoa_don_nhap_kho`),
+  KEY `ma_hang_hoa` (`ma_hang_hoa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -48,10 +51,13 @@ CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don_nhap_kho` (
 DROP TABLE IF EXISTS `chi_tiet_hoa_don_xuat_kho`;
 CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don_xuat_kho` (
   `ma` int(11) NOT NULL AUTO_INCREMENT,
+  `ma_hoa_don_xuat_kho` int(11) NOT NULL,
+  `ma_hang_hoa` int(11) NOT NULL,
   `so_luong` int(11) NOT NULL,
-  `ma_hang` int(11) NOT NULL,
   `vi_tri_kho` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`)
+  PRIMARY KEY (`ma`),
+  KEY `ma_hoa_don_xuat_kho` (`ma_hoa_don_xuat_kho`),
+  KEY `ma_hang_hoa` (`ma_hang_hoa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -70,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `hang_hoa` (
   `so_luong_ton` int(11) NOT NULL,
   `ma_nha_cung_cap` int(11) NOT NULL,
   `ma_loai_hang` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
+  PRIMARY KEY (`ma`),
+  KEY `ma_loai_hang` (`ma_loai_hang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -85,7 +92,9 @@ CREATE TABLE IF NOT EXISTS `hoa_don_nhap_kho` (
   `ma_nhan_vien` int(11) NOT NULL,
   `ngay_nhap` date NOT NULL,
   `ma_nha_cung_cap` int(11) NOT NULL,
-  PRIMARY KEY (`ma`)
+  PRIMARY KEY (`ma`),
+  KEY `ma_nha_cung_cap` (`ma_nha_cung_cap`),
+  KEY `ma_nhan_vien` (`ma_nhan_vien`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -99,7 +108,8 @@ CREATE TABLE IF NOT EXISTS `hoa_don_xuat_kho` (
   `ma` int(11) NOT NULL AUTO_INCREMENT,
   `ma_nhan_vien` int(11) NOT NULL,
   `ngay_xuat` date NOT NULL,
-  PRIMARY KEY (`ma`)
+  PRIMARY KEY (`ma`),
+  KEY `ma_nhan_vien` (`ma_nhan_vien`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -162,6 +172,43 @@ CREATE TABLE IF NOT EXISTS `nha_cung_cap` (
   `vi_tri_kho` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ma`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `chi_tiet_hoa_don_nhap_kho`
+--
+ALTER TABLE `chi_tiet_hoa_don_nhap_kho`
+  ADD CONSTRAINT `chi_tiet_hoa_don_nhap_kho_ibfk_1` FOREIGN KEY (`ma_hoa_don_nhap_kho`) REFERENCES `hoa_don_nhap_kho` (`ma`),
+  ADD CONSTRAINT `chi_tiet_hoa_don_nhap_kho_ibfk_2` FOREIGN KEY (`ma_hang_hoa`) REFERENCES `hang_hoa` (`ma`);
+
+--
+-- Constraints for table `chi_tiet_hoa_don_xuat_kho`
+--
+ALTER TABLE `chi_tiet_hoa_don_xuat_kho`
+  ADD CONSTRAINT `chi_tiet_hoa_don_xuat_kho_ibfk_1` FOREIGN KEY (`ma_hoa_don_xuat_kho`) REFERENCES `hoa_don_xuat_kho` (`ma`),
+  ADD CONSTRAINT `chi_tiet_hoa_don_xuat_kho_ibfk_2` FOREIGN KEY (`ma_hang_hoa`) REFERENCES `hang_hoa` (`ma`);
+
+--
+-- Constraints for table `hang_hoa`
+--
+ALTER TABLE `hang_hoa`
+  ADD CONSTRAINT `hang_hoa_ibfk_1` FOREIGN KEY (`ma_loai_hang`) REFERENCES `loai_hang` (`ma`);
+
+--
+-- Constraints for table `hoa_don_nhap_kho`
+--
+ALTER TABLE `hoa_don_nhap_kho`
+  ADD CONSTRAINT `hoa_don_nhap_kho_ibfk_1` FOREIGN KEY (`ma_nha_cung_cap`) REFERENCES `nha_cung_cap` (`ma`),
+  ADD CONSTRAINT `hoa_don_nhap_kho_ibfk_2` FOREIGN KEY (`ma_nhan_vien`) REFERENCES `nhan_vien` (`ma`);
+
+--
+-- Constraints for table `hoa_don_xuat_kho`
+--
+ALTER TABLE `hoa_don_xuat_kho`
+  ADD CONSTRAINT `hoa_don_xuat_kho_ibfk_1` FOREIGN KEY (`ma_nhan_vien`) REFERENCES `nhan_vien` (`ma`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,10 +1,10 @@
-export const timeout = function (sec) {
+const timeout = function (sec) {
   return new Promise((_, reject) =>
     setTimeout(() => reject(new Error('Request took too long!')), sec * 1000)
   );
 };
 //
-export const AJAX = async function (url, uploadData = undefined) {
+const AJAX = async function (url, uploadData = undefined) {
   try {
     const options = {
       method: 'POST',
@@ -25,3 +25,5 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw err;
   }
 };
+
+export { timeout, AJAX };

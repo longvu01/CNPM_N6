@@ -10,14 +10,14 @@
 
 <!-- Start HTML -->
     <?php require_once ('../root/top.php')?>
-    <?php top('Thêm hàng hóa') ?>
+    <?php top('Xem chi tiết') ?>
 </head>
 <body>
     <div id="toast"></div>
     <?php require_once ('../root/header.php')?>
     <?php require_once ('../root/menu.php')?>
 
-    <!-- Code thêm hàng hóa-->
+    <!-- Code xem chi tiết hàng hóa-->
 
     <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>

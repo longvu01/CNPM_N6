@@ -56,7 +56,7 @@
     $_SESSION['info_message'] = "Bạn đã thêm nhân viên mới thành công!";
     $_SESSION['info_type'] = "success";
 
-    header('Location: ../');
+    header('Location: ../search.php');
 
     mysqli_close($conn);
 ?>

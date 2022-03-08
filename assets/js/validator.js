@@ -1,4 +1,4 @@
-export default function Validator(formSelector) {
+function Validator(formSelector) {
   // Lấy ra form element trong DOM by `formSelector`
   const formElement = document.querySelector(formSelector);
   // Lưu các rules của form element
@@ -112,7 +112,7 @@ export default function Validator(formSelector) {
     }
 
     // Xử lý hành vi submit form
-    formElement.addEventListener('submit', e => {
+    formElement.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const inputs = formElement.querySelectorAll('[name][rules]');
@@ -173,3 +173,5 @@ export default function Validator(formSelector) {
     });
   }
 }
+
+export default Validator;

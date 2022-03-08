@@ -33,7 +33,7 @@ function connect(){
 	if (!$link) {
 	    die('<br/>Khong ket noi duoc: ' . mysqli_error());
 	}	
-	mysqli_select_db($link,'projectcnw_db') or die('Could not select database.');
+	mysqli_select_db($link,'quan_ly_hang_hoa') or die('Could not select database.');
 	mysqli_query($link,"SET NAMES 'utf8'");
 }
 
