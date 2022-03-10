@@ -1,6 +1,9 @@
 :root {
-  --primary-color: #8d6767;
-  --secondary-color: #793d3d;
+  --primary-color: #110a57;
+  --yellow-color: #fec93b;
+  --dark-blue: #07689f;
+  --normal-blue: #40a8c5;
+  --light-blue: #a0d5f4;
 }
 
 .wrapper {
@@ -10,6 +13,7 @@
   position: relative;
   padding: 0 15px;
 }
+
 textarea {
   resize: none;
 }

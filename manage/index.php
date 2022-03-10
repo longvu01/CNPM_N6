@@ -10,6 +10,14 @@
     $id = $_SESSION['id'];
     require_once("../root/check_permission_admin.php");
 
+    // Time for date picker
+    $current_year = date("Y");
+    $end_year = $current_year - 18;
+    $start_year = $current_year - 45;
+
+    $time_start = date("$start_year-m-d");
+    $time_end = date("$end_year-m-d");
+
     mysqli_close($conn);
 ?>
 
@@ -25,11 +33,10 @@
     <div class="wrapper">
         <form class="" id="form-add" method="POST" action="./process/process_insert.php">
             <legend class="">Thêm nhân viên</legend>
-            <input name="id" type ="hidden" value="<?php echo $id ?>"/>
             <!--  -->
             <div class="form-group mt-4">
                 <label>Tên đăng nhập</label>
-                <input name="ten_dang_nhap" placeholder="Nhập họ đệm nhân viên" class="form-control" rules="required"/>
+                <input name="ten_dang_nhap" placeholder="Nhập tên đăng nhập nhân viên" class="form-control" rules="required"/>
                 <span class="form-message"></span>
             </div>
 
@@ -60,7 +67,7 @@
             <div class="form-group mt-4">
                 <label>Ngày sinh</label>
                 <input type="date" name="ngay_sinh"
-                  min="2018-01-01" max="2018-12-31"
+                  min=<?= $time_start ?> max=<?= $time_end ?>
                   class="form-control" rules="required">
                 <span class="form-message"></span>
             </div>

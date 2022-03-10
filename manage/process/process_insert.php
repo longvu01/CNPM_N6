@@ -9,7 +9,7 @@
       || empty($_POST['sdt']) || empty($_POST['email']) 
       || empty($_POST['ngay_sinh']) || empty($_POST['dia_chi']) 
       || empty($_POST['gioi_tinh']) || empty($_POST['luong'])
-      || empty($_POST['mat_khau']) || empty($_POST['id'])
+      || empty($_POST['mat_khau'])
     ) {
         $_SESSION['info_title'] = "Có lỗi!";
         $_SESSION['info_message'] = "❌Cần điền đầy đủ thông tin!";
@@ -19,7 +19,6 @@
         exit;
     }
     // ----------------------------------------------------------------
-    $id = addslashes($_POST['id']);
     $ten_dang_nhap = addslashes($_POST['ten_dang_nhap']);
     $mat_khau = addslashes($_POST['mat_khau']);
     $ho_ten = addslashes($_POST['ho_ten']);
