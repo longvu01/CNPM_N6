@@ -27,8 +27,8 @@
 </head>
 <body>
     <div id="toast"></div>
-    <?php require_once ('../root/header.php')?>
     <?php require_once ('../root/menu.php')?>
+    <?php require_once ('../root/header.php')?>
 
     <div class="wrapper">
         <form class="" id="form-add" method="POST" action="./process/process_insert.php">
@@ -101,7 +101,6 @@
             <button class="btn btn-primary mt-4 " type="submit">Thêm nhân viên</button>
         </form>
     </div>
-
 
     <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>

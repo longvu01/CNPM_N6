@@ -14,8 +14,8 @@
 </head>
 <body>
     <div id="toast"></div>
-    <?php require_once ('../root/header.php')?>
     <?php require_once ('../root/menu.php')?>
+    <?php require_once ('../root/header.php')?>
 
     <!-- Code xóa hàng hóa-->
 
