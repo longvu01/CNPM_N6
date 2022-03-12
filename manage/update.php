@@ -22,7 +22,7 @@
     <?php require_once ('../root/menu.php')?>
     <?php require_once ('../root/header.php')?>
 
-  
+
 
     <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>
