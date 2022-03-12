@@ -1,0 +1,18 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.addproduct-input{
+    width: 70%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.addproduct-footer-input{
+    padding-left: 66.5%;
+}
+.addproduct-footer-input-setting{
+    height: 50px;
+}
