@@ -48,13 +48,16 @@
                         <th>Vị trí kho</th>
                         <th>Số lượng</th>
                         <th>Loại hàng</th>
-                        <th>Hành động</th>
+                        <th>
+                            <a href=""><i class='bx bx-edit-alt'></i></a>
+                            <a href=""><i class='bx bx-trash'></i></a>
+                        </th>
                     </tr>
                 </table>
             </div>
         </div>
 
-    <?php require_once ('../root/footer.php')?>
+       <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>
     <?php require_once ('../root/show_toast.php')?>
 
