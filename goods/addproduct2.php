@@ -19,17 +19,23 @@
     }
         
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/addproduct2.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm hàng hóa</title>
+
+    <?php require_once ('../root/top.php')?>
+    <?php top('Thêm hàng hóa') ?>
 </head>
 <body>
+<div id="toast"></div>
+    <?php require_once ('../root/menu.php')?>
+    <?php require_once ('../root/header.php')?>
+    <div class="hello-user">
+            <h2>Xin chào,</h2>
+            <h2>USER NAME</h2>
+        </div>
+        <div class="button-add">
+            <button type="button">
+                + Thêm hàng hoá
+            </button>
+        </div>
     <div>
         <h2>Thêm hàng hóa</h2>
     </div>
@@ -57,16 +63,18 @@
                     <input type="number" name="quantity" class="addproduct-input"><br>
                 </div>
                 <div class="addproduct-footer-input">
-                    <button type="submit" name="submit"  class="addproduct-footer-input-setting">Thêm hàng hóa</button>
-                        <script language="javascript">
-                            var button = document.getElementById("btn");
-                            button.onclick = function(){
-                            alert("Đã thêm hàng hóa mới thành công!");
-                            }     
-                        </script>     
+                    <button type="submit" name="submit" id="btn" class="addproduct-footer-input-setting">Thêm hàng hóa</button>
                 </div>
             </div>
         </div>
     </form>    
+    <?php require_once ('../root/footer.php')?>
+    <script src = "../assets/js/toast_msg.js"></script>
+    <?php require_once ('../root/show_toast.php')?>
+
+    <script type="module">
+        import Validator from "../assets/js/validator.js"
+        const formAdd = new Validator('#form-add')
+    </script>  
 </body>
 </html>
