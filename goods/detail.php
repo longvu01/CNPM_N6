@@ -17,7 +17,42 @@
     <?php require_once ('../root/menu.php')?>
     <?php require_once ('../root/header.php')?>
 
-    <!-- Code xem chi tiết hàng hóa-->
+    <div class="contaner">
+            <div class="hello-user">
+                <h2>Xin chào,</h2>
+                <h2>USER NAME</h2>
+            </div>
+            <div class="button-add">
+                <button type="button">
+                    + Thêm hàng hoá
+                </button>
+            </div>
+            <div class="title">
+                <h2>Danh sách hàng hoá</h2>
+            </div>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Tên hàng</th>
+                        <th>Mã hàng</th>
+                        <th>Giá</th>
+                        <th>Vị trí kho</th>
+                        <th>Số lượng</th>
+                        <th>Loại hàng</th>
+                        <th>Hành động</th>
+                    </tr>
+                    <tr>
+                        <th>Tên hàng</th>
+                        <th>Mã hàng</th>
+                        <th>Giá</th>
+                        <th>Vị trí kho</th>
+                        <th>Số lượng</th>
+                        <th>Loại hàng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
     <?php require_once ('../root/footer.php')?>
     <script src = "../assets/js/toast_msg.js"></script>
