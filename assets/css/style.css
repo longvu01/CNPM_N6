@@ -64,7 +64,6 @@ body.dark{
 .sidebar li{
     height: 50px;
     list-style: none;
-    display: flex;
     align-items: center;
     margin-top: 10px;
 }
@@ -403,6 +402,7 @@ body{
     float: left;
     background-color: darkslateblue;
     border-top-right-radius: 20px;
+    padding-right: 10px;
 }
 .title h2{
     font-size: 20px;
@@ -426,3 +426,15 @@ th, td {
       border-top-right-radius: 20px;
       height: 450px;
   }
+ .hide-user{
+     display: none;
+ }
+ .hide-user a{
+     justify-content: center;
+}
+.hide-roots{
+    display: none;
+}
+.hide-list{
+    display: none;
+}
