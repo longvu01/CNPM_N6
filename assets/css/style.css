@@ -60,7 +60,6 @@ body.dark {
   border-right: 0.5px solid #3a3b3c;
 }
 
-/* ===== Reusable code - Here ===== */
 .sidebar li {
   height: 50px;
   list-style: none;
@@ -368,6 +367,7 @@ body {
   font-size: 20px;
   margin-top: 8px;
 }
+
 .img-user {
   margin-left: auto;
   margin-top: 2px;
@@ -458,4 +458,3 @@ td {
   cursor: pointer;
   background-color: rgb(136, 224, 238);
 }
-/* =======  ======== */

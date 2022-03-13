@@ -24,40 +24,67 @@
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Revenue</span>
+                    <li class="nav-link" id="user-click">
+                        <a href="#" class="user-click" onclick="hien1()">
+                            <i class='bx  bx-user icon' ></i>
+                            <span class="text nav-text">Quản lý người dùng</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
+                    <li class="nav-link hide-user" >
                         <a href="#">
+                           
+                            <span class="text nav-text">Thêm mới tài khoản</span>
+                        </a>
+                    </li>
+                    <li class="nav-link hide-user" >
+                        <a href="#">
+                         
+                            <span class="text nav-text">Xoá tài khoản</span>
+                        </a>
+                    </li>
+                    <li class="nav-link hide-user" >
+                        <a href="#">
+                         
+                            <span class="text nav-text">Sửa thông tin</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" onclick="hien2()">
                             <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
+                            <span class="text nav-text" >Quản lý hàng hoá</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
+                    <li class="nav-link hide-roots" >
                         <a href="#">
+                         
+                            <span class="text nav-text">Thêm hàng hoá</span>
+                        </a>
+                    </li>
+                    <li class="nav-link hide-roots" >
+                        <a href="#">
+                         
+                            <span class="text nav-text">Chỉnh sửa thông tin</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" onclick="hien3()">
                             <i class='bx bx-pie-chart-alt icon' ></i>
-                            <span class="text nav-text">Analytics</span>
+                            <span class="text nav-text">Thống kê</span>
+                        </a>
+                    </li>
+                    <li class="nav-link hide-list" >
+                        <a href="#">
+                         
+                            <span class="text nav-text">Thống kê số lượng</span>
+                        </a>
+                    </li>
+                    <li class="nav-link hide-list" >
+                        <a href="#">
+                         
+                            <span class="text nav-text">Xem biểu đồ</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-heart icon' ></i>
-                            <span class="text nav-text">Likes</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon' ></i>
-                            <span class="text nav-text">Wallets</span>
-                        </a>
-                    </li>
 
                 </ul>
             </div>
