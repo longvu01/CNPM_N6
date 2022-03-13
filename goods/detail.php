@@ -9,12 +9,15 @@
     // $id = $_GET['id'];
     $id = 2;
     $sql = "select * from hang_hoa where ma = '$id'";
+    
     // die($sql);
     $item = select_one($sql);
+    $loai_hang = $item['ma_loai_hang'];
     // die($item);
     // lay ten nha cc
     // lay ten loai hang
-
+    $sql2 = "select * from loai_hang where ten_loai_hang = '$loai_hang'";
+    
     mysqli_close($conn);
 ?>
 
@@ -49,6 +52,7 @@
                         <th>Vị trí kho</th>
                         <th>Số lượng</th>
                         <th>Loại hàng</th>
+                        <th>Hành động</th>
                     </tr>
                     <tr>
                         <th><?php echo $item['ten_hang'] ?></th>
@@ -57,6 +61,11 @@
                         <th><?= $item['so_luong_da_ban'] ?></th>
                         <th><?= $item['so_luong_ton'] ?></th>
                         <th>Ten loai hang</th>
+                        <th>
+                            <a href=""><i class='bx bx-edit-alt'></i></a>
+                            <a href=""><i class='bx bx-trash'></i></a>
+                            <a href=""><i class='bx bx-detail'></i></a>
+                        </th>
                     </tr>
                 </table>
             </div>
