@@ -424,19 +424,24 @@ td {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
-  height: 450px;
+  height: auto;
 }
 /* =======  ======== */
-.edit {
-  display: flex;
-}
 .form-label-1 {
   width: 30%;
   font-weight: 700;
 }
 .form-style {
-  border-radius: 10px;
+  border-radius: 4px;
+  width: 100%;
+  padding: 4px;
 }
+
+.form-title {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
 .wrap {
   margin: 100px 100px;
   width: 80%;
@@ -444,5 +449,13 @@ td {
 }
 .form-edit {
   margin: 100px;
+}
+.btn-submit {
+  color: #483d8b;
+  border-radius: 8px;
+  width: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: rgb(136, 224, 238);
 }
 /* =======  ======== */

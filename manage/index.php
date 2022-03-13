@@ -46,39 +46,39 @@
 
             <div class="wrap">
                 <form class="form-edit" id="form-add" method="POST" action="./process/process_insert.php"> 
-                    <legend class="">Thêm nhân viên</legend>
+                    <legend class="form-title">Thêm nhân viên</legend>
 
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Tên đăng nhập</label>
                         <input name="ten_dang_nhap" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
 
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Mật khẩu</label>
                         <input name="mat_khau" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
 
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Họ và tên</label>
                         <input name="mat_khau" placeholder="Nhập họ và tên nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
 
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Số điện thoại</label>
                         <input name="mat_khau" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
 
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Email</label>
                         <input name="email" placeholder="Nhập số email nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
                     
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Ngày sinh</label>
                         <input type="date" name="ngay_sinh"
                         min=<?= $time_start ?> max=<?= $time_end ?>
@@ -86,7 +86,7 @@
                         <span class="form-message"></span>
                     </div>
                     
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Địa chỉ</label>
                         <input name="email" placeholder="Nhập số email nhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
@@ -95,22 +95,22 @@
                     <div class="form-group mt-4">
                         <label class="form-label-1">Chọn giới tính nhân viên</label>
                         <div class="form-check">
-                            <input class="form-check-input form-style" type="radio" name="gioi_tinh" value="male" id="male" checked>
+                            <input class="form-check-input" type="radio" name="gioi_tinh" value="male" id="male" checked>
                             <label class="form-check-label" for="male">Nam</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input form-style" type="radio" name="gioi_tinh" value="female" id="female">
+                            <input class="form-check-input" type="radio" name="gioi_tinh" value="female" id="female">
                             <label class="form-check-label" for="female">Nữ</label>
                         </div>
                     </div>
                     
-                    <div class="mb-3 form-group edit">
+                    <div class="form-group">
                         <label class="form-label-1">Lương</label>
                         <input name="email" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required"/>
                         <span class="form-message"></span>
                     </div>
-                    <button class="btn btn-primary mt-4 " type="submit">Thêm nhân viên</button>
+                    <button class="btn-submit" type="submit">Thêm nhân viên</button>
             </form>
         </div>
 

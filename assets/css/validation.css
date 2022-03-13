@@ -105,6 +105,10 @@
 }
 
 /* ======= Form ======== */
+.form-group {
+  margin-bottom: 12px;
+}
+
 .form-group.invalid .form-control {
   border-color: #f33a58;
 }
