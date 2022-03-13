@@ -7,8 +7,7 @@
     // $id = $_SESSION['id'];
     
     // $id = $_GET['id'];
-    $id = 2;
-    $sql = "select * from hang_hoa where ma = '$id'";
+    $sql = "select * from hang_hoa ";
     
     // die($sql);
     $item = select_one($sql);
