@@ -5,7 +5,7 @@
     $user = $data->fetchAll();
 
     if(isset($_POST['add'])){ 
-        $folder = "img/"; //var_dump($folder);exit;
+        $folder = "../goods/img/"; //var_dump($folder);exit;
         $file = $folder . basename($_FILES["upload"]["name"]); 
         move_uploaded_file($_FILES["upload"]["tmp_name"], $file); 
         $ten_hang = $_POST['ten_hang'];
