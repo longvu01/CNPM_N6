@@ -371,21 +371,19 @@ body {
   margin-top: 8px;
 }
 
- .hide-user{
-     display: none;
- }
- .hide-user a{
-     justify-content: center;
+.hide-user {
+  display: none;
 }
-.hide-roots{
-    display: none;
+.hide-user a {
+  justify-content: center;
 }
-.hide-list{
-    display: none;
+.hide-roots {
+  display: none;
 }
-=======
-
-.img-user {
+.hide-list {
+  display: none;
+}
+======= .img-user {
   margin-left: auto;
   margin-top: 2px;
 }

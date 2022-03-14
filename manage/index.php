@@ -36,9 +36,11 @@ mysqli_close($conn);
       <h2>Xin chào,</h2>
       <h2>USER NAME</h2>
     </div>
+
     <div class="button-add">
 
     </div>
+
     <div class="title">
       <h2>Danh sách hàng hoá</h2>
     </div>

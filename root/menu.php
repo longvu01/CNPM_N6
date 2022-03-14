@@ -98,7 +98,7 @@ mysqli_close($conn);
           </a>
         </li>
         <li class="nav-link hide-list">
-          <a href="#">
+          <a href="../charts">
             <span class="text nav-text">Thống kê số lượng</span>
           </a>
         </li>
