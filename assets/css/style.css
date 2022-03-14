@@ -61,7 +61,6 @@ body.dark {
 .sidebar li {
   height: 50px;
   list-style: none;
-  display: flex;
   align-items: center;
   margin-top: 10px;
 }
@@ -383,7 +382,7 @@ body {
 .hide-list {
   display: none;
 }
-======= .img-user {
+.img-user {
   margin-left: auto;
   margin-top: 2px;
 }

@@ -23,7 +23,7 @@ modeSwitch.addEventListener('click', () => {
   }
 });
 
-const hien1 = function () {
+function hien1 () {
   var a = document.querySelectorAll('.hide-user');
   var b = a[0].style.display;
   if (b == '' || b == 'none') {
@@ -36,7 +36,7 @@ const hien1 = function () {
     });
   }
 };
-const hien2 = function () {
+function hien2 () {
   var a = document.querySelectorAll('.hide-roots');
   var b = a[0].style.display;
   if (b == '' || b == 'none') {
@@ -49,7 +49,7 @@ const hien2 = function () {
     });
   }
 };
-const hien3 = function () {
+function hien3 () {
   var a = document.querySelectorAll('.hide-list');
   var b = a[0].style.display;
   if (b == '' || b == 'none') {
