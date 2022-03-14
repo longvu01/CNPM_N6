@@ -366,6 +366,20 @@ body {
   margin-top: 8px;
 }
 
+ .hide-user{
+     display: none;
+ }
+ .hide-user a{
+     justify-content: center;
+}
+.hide-roots{
+    display: none;
+}
+.hide-list{
+    display: none;
+}
+=======
+
 .img-user {
   margin-left: auto;
   margin-top: 2px;
