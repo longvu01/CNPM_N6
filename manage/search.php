@@ -10,6 +10,12 @@
     $id = $_SESSION['id'];
     require_once("../root/check_permission_admin.php");
 
+    // Default search = ""
+    $search = "";
+    if(isset($_GET['search'])){
+        $search = addslashes($_GET['search']);
+    }
+
     mysqli_close($conn);
 ?>
 

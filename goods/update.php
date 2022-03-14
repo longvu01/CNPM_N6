@@ -10,8 +10,8 @@
     $role = $_SESSION['role'];
     $id = $_SESSION['id'];
     require_once("../root/check_permission_admin.php");
-    // $ma_hang = $_GET['ma_hang'];
-    $ma_hang = 2;
+    $ma_hang = $_GET['ma'];
+    // $ma_hang = 2;
     $sql = "select * from hang_hoa where ma = '$ma_hang'";
     $item = select_one($sql);
     mysqli_close($conn);

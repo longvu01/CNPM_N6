@@ -290,6 +290,11 @@ body.dark .switch::before {
   background-color: var(--body-color);
   transition: var(--tran-05);
 }
+
+.home h2 {
+  padding-left: 40px;
+}
+
 .home .text {
   font-size: 30px;
   font-weight: 500;
