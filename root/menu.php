@@ -1,16 +1,16 @@
 <?php
-    include("../connect.php");
-    // Kiểm tra quyền, dữ liệu
-    // ----------------------------------------------------------------
-    $sql = 'SELECT * FROM hang_hoa ORDER BY ma DESC LIMIT 1';
-    $resultLast = mysqli_query($conn, $sql);
-    $item = mysqli_fetch_array($resultLast);
-    
-    $sql = 'SELECT * FROM nhan_vien ORDER BY ma DESC LIMIT 1';
-    $resultLast = mysqli_query($conn, $sql);
-    $user = mysqli_fetch_array($resultLast);
+include("../connect.php");
+// Kiểm tra quyền, dữ liệu
+// ----------------------------------------------------------------
+$sql = 'SELECT * FROM hang_hoa ORDER BY ma DESC LIMIT 1';
+$resultLast = mysqli_query($conn, $sql);
+$item = mysqli_fetch_array($resultLast);
 
-    mysqli_close($conn);
+$sql = 'SELECT * FROM nhan_vien ORDER BY ma DESC LIMIT 1';
+$resultLast = mysqli_query($conn, $sql);
+$user = mysqli_fetch_array($resultLast);
+
+mysqli_close($conn);
 ?>
 
 <nav class="sidebar close">
@@ -55,12 +55,12 @@
           </a>
         </li>
         <li class="nav-link hide-user">
-          <a href="../manage/delete.php?ma=<?php echo $user['ma']?>">
+          <a href="../manage/delete.php?ma=<?php echo $user['ma'] ?>">
             <span class="text nav-text">Xoá tài khoản</span>
           </a>
         </li>
         <li class="nav-link hide-user">
-          <a href="../manage/update.php?ma=<?php echo $user['ma']?>">
+          <a href="../manage/update.php?ma=<?php echo $user['ma'] ?>">
             <span class="text nav-text">Sửa thông tin</span>
           </a>
         </li>
@@ -82,12 +82,12 @@
           </a>
         </li>
         <li class="nav-link hide-roots">
-          <a href="../goods/update.php?ma=<?php echo $item['ma']?>">
+          <a href="../goods/update.php?ma=<?php echo $item['ma'] ?>">
             <span class="text nav-text">Chỉnh sửa thông tin</span>
           </a>
         </li>
         <li class="nav-link hide-roots">
-          <a href="../goods/delete.php?ma=<?php echo $item['ma']?>">
+          <a href="../goods/delete.php?ma=<?php echo $item['ma'] ?>">
             <span class="text nav-text">Xóa hàng</span>
           </a>
         </li>
