@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 08, 2022 at 03:13 AM
+-- Generation Time: Mar 13, 2022 at 01:38 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.21
 
@@ -72,13 +72,21 @@ CREATE TABLE IF NOT EXISTS `hang_hoa` (
   `ten_hang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gia_nhap` int(11) NOT NULL,
   `gia_ban` int(11) NOT NULL,
+  `img_link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `so_luong_da_ban` int(11) NOT NULL,
   `so_luong_ton` int(11) NOT NULL,
   `ma_nha_cung_cap` int(11) NOT NULL,
   `ma_loai_hang` int(11) NOT NULL,
   PRIMARY KEY (`ma`),
   KEY `ma_loai_hang` (`ma_loai_hang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hang_hoa`
+--
+
+INSERT INTO `hang_hoa` (`ma`, `ten_hang`, `gia_nhap`, `gia_ban`, `img_link`, `so_luong_da_ban`, `so_luong_ton`, `ma_nha_cung_cap`, `ma_loai_hang`) VALUES
+(2, 'Laptop', 500, 700, '', 2, 28, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -123,7 +131,14 @@ CREATE TABLE IF NOT EXISTS `loai_hang` (
   `ma` int(11) NOT NULL AUTO_INCREMENT,
   `ten_loai_hang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ma`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `loai_hang`
+--
+
+INSERT INTO `loai_hang` (`ma`, `ten_loai_hang`) VALUES
+(1, 'Điện tử');
 
 -- --------------------------------------------------------
 
@@ -146,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `nhan_vien` (
   `luong` int(11) NOT NULL,
   PRIMARY KEY (`ma`),
   UNIQUE KEY `email` (`email`,`sdt`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `nhan_vien`
@@ -154,7 +169,8 @@ CREATE TABLE IF NOT EXISTS `nhan_vien` (
 
 INSERT INTO `nhan_vien` (`ma`, `ten_dang_nhap`, `mat_khau`, `ho_ten`, `sdt`, `email`, `ngay_sinh`, `dia_chi`, `quyen`, `gioi_tinh`, `luong`) VALUES
 (1, 'admin', 'admin', 'Đặng Thanh Tùng', '099898989', 'thanhtung@gmail.com', '2004-03-01', 'Thanh Trì, Hà Nội', b'1', b'0', 2000),
-(3, 'tendn', 'matkhau', 'hoten', 'sdt', 'a@b.com', '2018-12-23', 'diachi', b'0', b'1', 0);
+(3, 'tendn', 'matkhau', 'hoten', 'sdt', 'a@b.com', '2018-12-23', 'diachi', b'0', b'1', 0),
+(4, 'admin1', 'admin1', 'Hoàng Tiến Trường', '0123912523', 'tientruong@gmail.com', '2004-01-01', 'Hà Nội', b'0', b'1', 1000);
 
 -- --------------------------------------------------------
 
@@ -171,7 +187,14 @@ CREATE TABLE IF NOT EXISTS `nha_cung_cap` (
   `dia_chi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `vi_tri_kho` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ma`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `nha_cung_cap`
+--
+
+INSERT INTO `nha_cung_cap` (`ma`, `ten_nha_cung_cap`, `sdt`, `email`, `dia_chi`, `vi_tri_kho`) VALUES
+(1, 'Phong Vũ', 123401234, 'pv@gmail.com', 'Hà Nội', 'Hà Nội');
 
 --
 -- Constraints for dumped tables
