@@ -23,48 +23,42 @@ modeSwitch.addEventListener('click', () => {
   }
 });
 
-        function hien1(){
-            var a = document.querySelectorAll('.hide-user');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
-        function hien2(){
-            var a = document.querySelectorAll('.hide-roots');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
-        function hien3(){
-            var a = document.querySelectorAll('.hide-list');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
+const hien1 = function () {
+  var a = document.querySelectorAll('.hide-user');
+  var b = a[0].style.display;
+  if (b == '' || b == 'none') {
+    a.forEach((item) => {
+      item.style.display = 'block';
+    });
+  } else {
+    a.forEach((item) => {
+      item.style.display = 'none';
+    });
+  }
+};
+const hien2 = function () {
+  var a = document.querySelectorAll('.hide-roots');
+  var b = a[0].style.display;
+  if (b == '' || b == 'none') {
+    a.forEach((item) => {
+      item.style.display = 'block';
+    });
+  } else {
+    a.forEach((item) => {
+      item.style.display = 'none';
+    });
+  }
+};
+const hien3 = function () {
+  var a = document.querySelectorAll('.hide-list');
+  var b = a[0].style.display;
+  if (b == '' || b == 'none') {
+    a.forEach((item) => {
+      item.style.display = 'block';
+    });
+  } else {
+    a.forEach((item) => {
+      item.style.display = 'none';
+    });
+  }
+};

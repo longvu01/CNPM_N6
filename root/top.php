@@ -16,7 +16,6 @@ function top($title) {
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' />
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,500&display=swap' rel='stylesheet'>
-    <script defer src = '../assets/js/menu.js'></script>";
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,500&display=swap' rel='stylesheet'>";
 }
 ?>
