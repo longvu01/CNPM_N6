@@ -4,25 +4,15 @@ require_once("../../connect.php");
 // Kiểm tra quyền, dữ liệu
 require_once("../../root/check_permission_admin.php");
 // Back to home page when data is empty
-// if(
-//   empty($_POST['ten_dang_nhap']) || empty($_POST['ho_ten']) 
-//   || empty($_POST['sdt']) || empty($_POST['email']) 
-//   || empty($_POST['ngay_sinh']) || empty($_POST['dia_chi']) 
-//   || empty($_POST['gioi_tinh']) || empty($_POST['luong'])
-//   || empty($_POST['mat_khau'])
-// ) {
-//     $_SESSION['info_title'] = "Có lỗi!";
-//     $_SESSION['info_message'] = "❌Cần điền đầy đủ thông tin!";
-//     $_SESSION['info_type'] = "error";
-
-//     header('Location: ../');
-//     exit;
-// }
 if (
-  empty($_POST['ten_dang_nhap']) || empty($_POST['mat_khau'])
+  empty($_POST['ten_dang_nhap']) || empty($_POST['ho_ten'])
+  || empty($_POST['sdt']) || empty($_POST['email'])
+  || empty($_POST['ngay_sinh']) || empty($_POST['dia_chi'])
+  || empty($_POST['gioi_tinh']) || empty($_POST['luong'])
+  || empty($_POST['mat_khau'])
 ) {
   $_SESSION['info_title'] = "Có lỗi!";
-  $_SESSION['info_message'] = "❌Cần điền đầy đủ tài khoản, mật khẩu!";
+  $_SESSION['info_message'] = "❌Cần điền đầy đủ thông tin!";
   $_SESSION['info_type'] = "error";
 
   header('Location: ../');

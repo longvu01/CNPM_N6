@@ -1,0 +1,83 @@
+.table__error--message {
+  font-size: 3rem;
+  color: orangered;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  padding: 8px 100px 8px 8px;
+}
+
+.btn__page {
+  padding: 8px;
+  min-width: 30px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn__page--active {
+  color: #fff;
+  background-color: darkslateblue;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+#export_excel {
+  padding: 8px;
+  font-size: 1.6rem;
+  color: darkslateblue;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: #88d77e;
+  margin-bottom: 12px;
+}
+
+.form-export {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-export > * {
+  font-size: 1.2rem;
+  padding: 0 8px;
+}
+
+#submit {
+  margin-left: 8px;
+  background-color: #88d77e;
+  color: darkslateblue;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#table {
+  margin: 0 auto;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.highcharts-figure {
+  width: 100%;
+  margin: 0 8px;
+}

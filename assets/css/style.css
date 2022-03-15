@@ -61,7 +61,6 @@ body.dark {
 .sidebar li {
   height: 50px;
   list-style: none;
-  display: flex;
   align-items: center;
   margin-top: 10px;
 }
@@ -285,7 +284,6 @@ body.dark .switch::before {
   top: 0;
   top: 0;
   left: 250px;
-  height: 100vh;
   width: calc(100% - 250px);
   background-color: var(--body-color);
   transition: var(--tran-05);
@@ -304,7 +302,6 @@ body.dark .switch::before {
 
 .sidebar.close ~ .home {
   left: 78px;
-  height: 100vh;
   width: calc(100% - 78px);
 }
 body.dark .home .text {
@@ -371,20 +368,18 @@ body {
   margin-top: 8px;
 }
 
- .hide-user{
-     display: none;
- }
- .hide-user a{
-     justify-content: center;
+.hide-user {
+  display: none;
 }
-.hide-roots{
-    display: none;
+.hide-user a {
+  justify-content: center;
 }
-.hide-list{
-    display: none;
+.hide-roots {
+  display: none;
 }
-=======
-
+.hide-list {
+  display: none;
+}
 .img-user {
   margin-left: auto;
   margin-top: 2px;

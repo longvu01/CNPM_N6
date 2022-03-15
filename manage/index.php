@@ -4,7 +4,7 @@ require_once("../connect.php");
 // Kiểm tra quyền có phải quản trị viên ?
 // Fake trước khi làm chức năng đăng nhập
 $_SESSION['role'] = 1;
-$_SESSION['id'] = 1;
+// $_SESSION['id'] = 1;
 // 
 $role = $_SESSION['role'];
 $id = $_SESSION['id'];
@@ -36,9 +36,11 @@ mysqli_close($conn);
       <h2>Xin chào,</h2>
       <h2>USER NAME</h2>
     </div>
+
     <div class="button-add">
 
     </div>
+
     <div class="title">
       <h2>Danh sách hàng hoá</h2>
     </div>

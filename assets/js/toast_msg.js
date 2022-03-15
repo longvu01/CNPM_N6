@@ -14,7 +14,7 @@ function showToast(options) {
     const icon = icons[options.type];
 
     // Time delay animation
-    const duration = options.duration ?? 100000;
+    const duration = options.duration ?? 5000;
     const delay = duration / 1000;
 
     // Create new toast element
