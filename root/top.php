@@ -13,7 +13,6 @@ function top($title)
     <link rel='stylesheet' href='../assets/css/base.css'>
     <link rel='stylesheet' href='../assets/css/style.css'>
     <link rel='stylesheet' href='../assets/css/validation.css'>
-    <link rel='stylesheet' href='../assets/css/spinner.css'>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' />
     <link rel='preconnect' href='https://fonts.googleapis.com'>

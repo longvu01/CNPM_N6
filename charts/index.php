@@ -86,7 +86,7 @@ $_SESSION['window'] = 5;
 
         <h3 style="text-align: center; margin: 24px">Hoặc xuất nhiều data hơn</h3>
 
-        <form method="POST" class="form-export" action="./excel/core.php">
+        <form method="POST" class="form-export" action="./excel/export.php">
           <label for="limit">Nhập số lượng cần xuất(tối đa):</label>
           <input name="limit" class="" id="limit">
           <input type="submit" id="submit" name="submit" class="btn btn-primary" value="Xuất ra Excel" />
