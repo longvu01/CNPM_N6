@@ -98,6 +98,18 @@ $_SESSION['window'] = 5;
       <script src="../assets/js/toast_msg.js"></script>
       <?php require_once('../root/show_toast.php') ?>
 
+      <script>
+        function exportReportToExcel() {
+          let table = document.getElementsByTagName("table");
+          TableToExcel.convert(table[0], {
+            name: `export.xlsx`, // fileName 
+            sheet: {
+              name: 'Sheet 1' // sheetName
+            }
+          });
+        }
+      </script>
+
       <script type="module">
         import Validator from "../assets/js/validator.js"
         const formAdd = new Validator('#form-add')
