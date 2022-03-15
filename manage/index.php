@@ -4,7 +4,7 @@ require_once("../connect.php");
 // Kiểm tra quyền có phải quản trị viên ?
 // Fake trước khi làm chức năng đăng nhập
 $_SESSION['role'] = 1;
-$_SESSION['id'] = 1;
+// $_SESSION['id'] = 1;
 // 
 $role = $_SESSION['role'];
 $id = $_SESSION['id'];

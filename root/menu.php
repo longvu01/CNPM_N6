@@ -1,6 +1,5 @@
 <?php
 include("../connect.php");
-// Kiểm tra quyền, dữ liệu
 // ----------------------------------------------------------------
 $sql = 'SELECT * FROM hang_hoa ORDER BY ma DESC LIMIT 1';
 $resultLast = mysqli_query($conn, $sql);
@@ -121,49 +120,48 @@ mysqli_close($conn);
   </div>
 </nav>
 <script>
-        function hien1(){
-            var a = document.querySelectorAll('.hide-user');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
-        function hien2(){
-            var a = document.querySelectorAll('.hide-roots');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
-        function hien3(){
-            var a = document.querySelectorAll('.hide-list');
-            var b = a[0].style.display;
-            if (b==""||b=="none"){
-                a.forEach(item => {
-                    item.style.display = "block";
-                })
-            }
-            else{
-                a.forEach(item => {
-                    item.style.display = "none";
-                })
-            }
-            
-        };
-    </script>
+  function hien1() {
+    var a = document.querySelectorAll('.hide-user');
+    var b = a[0].style.display;
+    if (b == "" || b == "none") {
+      a.forEach(item => {
+        item.style.display = "block";
+      })
+    } else {
+      a.forEach(item => {
+        item.style.display = "none";
+      })
+    }
+
+  };
+
+  function hien2() {
+    var a = document.querySelectorAll('.hide-roots');
+    var b = a[0].style.display;
+    if (b == "" || b == "none") {
+      a.forEach(item => {
+        item.style.display = "block";
+      })
+    } else {
+      a.forEach(item => {
+        item.style.display = "none";
+      })
+    }
+
+  };
+
+  function hien3() {
+    var a = document.querySelectorAll('.hide-list');
+    var b = a[0].style.display;
+    if (b == "" || b == "none") {
+      a.forEach(item => {
+        item.style.display = "block";
+      })
+    } else {
+      a.forEach(item => {
+        item.style.display = "none";
+      })
+    }
+
+  };
+</script>

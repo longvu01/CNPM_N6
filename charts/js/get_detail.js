@@ -1,16 +1,7 @@
 'use strict';
-let chartSelect = document.querySelector('#chart__select');
-const spinner = document.querySelector('.load-spinner');
-////
-const toggleRenderSpinner = function () {
-  spinner.classList.toggle('hidden');
-};
-
-const callAjax = async function (days) {
+const callAjaxDetail = async function (days) {
   try {
-    toggleRenderSpinner();
-
-    const url = './process/get_chapter_count.php';
+    const url = './process/get_detail.php';
     const data = await fetch(url, {
       method: 'POST',
       headers: {
@@ -23,16 +14,14 @@ const callAjax = async function (days) {
 
     const res = await data.json();
 
-    toggleRenderSpinner();
-    
     const arr = Object.values(res[0]);
     const arrDetails = [];
-    Object.values(res[1]).forEach(each => {
+    Object.values(res[1]).forEach((each) => {
       each.data = Object.values(each.data);
       arrDetails.push(each);
     });
     // Create the chart
-    getChart(arr, arrDetails, days);
+    getChartDetail(arr, arrDetails, days);
   } catch (err) {
     showToast({
       title: 'Có lỗi',
@@ -43,27 +32,15 @@ const callAjax = async function (days) {
   }
 };
 
-let days = 30;
-if (days != 7 || days != 30 || days != 60) {
-  days = 30;
-}
-callAjax(days);
+callAjaxDetail(7);
 
-chartSelect.addEventListener('change', function (e) {
-  days = +e.target.value;
-  if (days !== 7 && days !== 30 && days !== 60) {
-    days = 30;
-  }
-  callAjax(days);
-});
-
-function getChart(arr, arrDetails, days) {
-  Highcharts.chart('container', {
+function getChartDetail(arr, arrDetails) {
+  Highcharts.chart('container_detail', {
     chart: {
       type: 'column',
     },
     title: {
-      text: `Tổng số chương của những truyện mới được viết ${days} ngày gần đây`,
+      text: `Thông tin về 10 mặt hàng bán chạy nhất 7 ngày gần đây`,
     },
     accessibility: {
       announceNewData: {
@@ -75,7 +52,7 @@ function getChart(arr, arrDetails, days) {
     },
     yAxis: {
       title: {
-        text: 'Tổng chương',
+        text: 'Tổng hàng hóa',
       },
     },
     legend: {
@@ -94,12 +71,12 @@ function getChart(arr, arrDetails, days) {
     tooltip: {
       headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
       pointFormat:
-        '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:f}</b> chương<br/>',
+        '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:f}</b> mặt hàng<br/>',
     },
 
     series: [
       {
-        name: 'Truyện',
+        name: 'Bán được',
         colorByPoint: true,
         data: arr,
       },

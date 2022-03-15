@@ -39,3 +39,5 @@
 14.03.2022 01:53:13 sql=[select * from hang_hoa ] 
 14.03.2022 01:54:39 sql=[select * from hang_hoa ] 
 14.03.2022 01:56:22 sql=[select * from hang_hoa ] 
+14.03.2022 02:36:58 sql=[select * from hang_hoa where ma = '2'] 
+14.03.2022 02:37:07 sql=[select * from hang_hoa where ma = '2'] 
