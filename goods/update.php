@@ -19,7 +19,7 @@
 
 <!-- Start HTML -->
 <?php require_once ('../root/top.php')?>
-    <?php top('Thêm nhân viên') ?>
+    <?php top('Sửa hàng hóa') ?>
 </head>
 <body>
     <div id="toast"></div>

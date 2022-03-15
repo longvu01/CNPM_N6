@@ -1,8 +1,0 @@
-14.03.2022 04:27:00 sql=[select * from hang_hoa where ma = '2'] 
-14.03.2022 06:00:20 sql=[select * from hang_hoa where ma = '2'] 
-14.03.2022 06:02:58 sql=[select * from hang_hoa where ma = '2'] 
-14.03.2022 06:03:06 sql=[select * from hang_hoa where ma = '10'] 
-14.03.2022 06:37:20 sql=[select * from hang_hoa where ma = '2'] 
-14.03.2022 07:16:15 sql=[select * from hang_hoa where ma = '10'] 
-14.03.2022 07:17:27 sql=[select * from hang_hoa where ma = '2'] 
-14.03.2022 07:22:09 sql=[select * from hang_hoa where ma = '10'] 
