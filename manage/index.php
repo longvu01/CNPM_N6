@@ -4,7 +4,7 @@ require_once("../connect.php");
 // Kiểm tra quyền có phải quản trị viên ?
 // Fake trước khi làm chức năng đăng nhập
 $_SESSION['role'] = 1;
-$_SESSION['id'] = 1;
+// $_SESSION['id'] = 1;
 // 
 $role = $_SESSION['role'];
 $id = $_SESSION['id'];
@@ -17,6 +17,8 @@ $start_year = $current_year - 45;
 
 $time_start = date("$start_year-m-d");
 $time_end = date("$end_year-m-d");
+
+
 
 mysqli_close($conn);
 ?>
@@ -42,15 +44,13 @@ mysqli_close($conn);
     </div>
 
     <div class="title">
-      <h2>Danh sách hàng hoá</h2>
+      <h2>Thêm nhân viên</h2>
     </div>
 
     <div class="table">
 
       <div class="wrap">
         <form class="form-edit" id="form-add" method="POST" action="./process/process_insert.php">
-          <legend class="form-title">Thêm nhân viên</legend>
-
           <div class="form-group">
             <label class="form-label-1">Tên đăng nhập</label>
             <input name="ten_dang_nhap" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
@@ -111,7 +111,7 @@ mysqli_close($conn);
             <input name="luong" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
-          <button class="btn-submit" type="submit">Thêm nhân viên</button>
+          <button class="btn-submit" name = "edit" type="submit">Sửa thông tin</button>
         </form>
       </div>
 

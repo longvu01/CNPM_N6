@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../connect.php");
+require_once("../lib_db.php");
 // Kiểm tra quyền có phải quản trị viên ?
 // Fake trước khi làm chức năng đăng nhập
 $_SESSION['role'] = 1;
@@ -9,6 +10,16 @@ $_SESSION['id'] = 1;
 $role = $_SESSION['role'];
 $id = $_SESSION['id'];
 require_once("../root/check_permission_admin.php");
+$current_year = date("Y");
+$end_year = $current_year - 18;
+$start_year = $current_year - 45;
+$time_start = date("$start_year-m-d");
+$time_end = date("$end_year-m-d");
+
+
+if(isset($_GET["id"])){$id = $_GET["id"];}
+$sql = "select * from nhan_vien where ma = '$id'";
+$nhanvien = select_one($sql);
 
 mysqli_close($conn);
 ?>
@@ -22,7 +33,98 @@ mysqli_close($conn);
   <div id="toast"></div>
   <?php require_once('../root/menu.php') ?>
   <?php require_once('../root/header.php') ?>
+  <div class="container">
+    <div class="hello-user">
+      <h2>Xin chào,</h2>
+      <h2>USER NAME</h2>
+    </div>
 
+    <div class="button-add">
+
+    </div>
+
+    <div class="title">
+      <h2>Sửa thông tin nhân viên</h2>
+    </div>
+
+    <div class="table">
+
+      <div class="wrap">
+        <form class="form-edit" id="form-add" method="POST" action="./process/process_update.php">
+
+          <div class="form-group">
+            <label class="form-label-1">Tên đăng nhập</label>
+            <input name="ten_dang_nhap"  value = "<?php echo $nhanvien["ten_dang_nhap"] ?>" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Mật khẩu</label>
+            <input name="mat_khau" value = "<?php echo $nhanvien["mat_khau"] ?>" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Họ và tên</label>
+            <input name="ho_ten" value = "<?php echo $nhanvien["ho_ten"] ?>" placeholder="Nhập họ và tên nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Số điện thoại</label>
+            <input name="sdt" value = "<?php echo $nhanvien["sdt"] ?>" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Email</label>
+            <input name="email" value = "<?php echo $nhanvien["email"] ?>" placeholder="Nhập email nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Ngày sinh</label>
+            <input type="date" value = "<?php echo $nhanvien["ngay_sinh"] ?>" name="ngay_sinh" min=<?= $time_start ?> max=<?= $time_end ?> class="form-control form-style" rules="required">
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-1">Địa chỉ</label>
+            <input name="dia_chi" value = "<?php echo $nhanvien["dia_chi"] ?>" placeholder="Nhập địa chỉ nhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group mt-4">
+            <label class="form-label-1">Chọn giới tính nhân viên</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gioi_tinh" value="male" id="male" <?php if($nhanvien["gioi_tinh"] == 1) echo "checked" ?>>
+              <label class="form-check-label" for="male">Nam</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gioi_tinh" value="female" id="female" <?php if($nhanvien["gioi_tinh"] == 0) echo "checked" ?>>
+              <label class="form-check-label" for="female">Nữ</label>
+            </div>
+          </div>
+
+          <div class="form-group" id = "123">
+            <label class="form-label-1">Lương</label>
+            <input name="luong" value = "<?php echo $nhanvien["luong"] ?>" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
+            <span class="form-message"></span>
+          </div>
+          <input name="id" value = "<?php echo $id ?>" id = "hideid"/>
+          <button class="btn-submit" type="submit" >Hoàn tất</button>
+        </form>
+      </div>
+
+      <?php require_once('../root/footer.php') ?>
+      <script src="../assets/js/toast_msg.js"></script>
+      <?php require_once('../root/show_toast.php') ?>
+
+      <script type="module">
+        import Validator from "../assets/js/validator.js"
+        const formAdd = new Validator('#form-add')
+      </script>
 
 
   <?php require_once('../root/footer.php') ?>
@@ -32,6 +134,9 @@ mysqli_close($conn);
   <script type="module">
     import Validator from "../assets/js/validator.js"
     const formAdd = new Validator('#form-add')
+  </script>
+  <script>
+    document.getElementById("hideid").style.display = "none";
   </script>
 </body>
 
