@@ -1,5 +1,5 @@
 <?php
-    include('connect2.php');
+    include('connect.php');
     $sql = "SELECT * FROM loai_hang";
     $data = $conn->query($sql);
     $user = $data->fetchAll();

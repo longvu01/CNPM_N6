@@ -393,6 +393,8 @@ body {
 }
 .container {
   padding: 20px 40px;
+  background-color: #e4e9f7;
+  min-height: 100vh;
 }
 .button-add {
   width: 20%;
@@ -422,7 +424,8 @@ body {
   text-align: center;
 }
 .table {
-  float: left;
+  display: flex;
+  
   width: 100%;
 }
 th,
@@ -439,6 +442,7 @@ td {
   border-top-right-radius: 20px;
   height: auto;
 }
+
 /* =======  ======== */
 .form-label-1 {
   width: 30%;
