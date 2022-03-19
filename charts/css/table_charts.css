@@ -43,7 +43,7 @@ td {
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  background-color: #88d77e;
+  background-color: rgb(136, 224, 238);
   margin-bottom: 12px;
 }
 
@@ -80,4 +80,9 @@ td {
 .highcharts-figure {
   width: 100%;
   margin: 0 8px;
+}
+
+.chart__label {
+  margin: 8px 0;
+  display: block;
 }

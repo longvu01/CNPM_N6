@@ -86,10 +86,11 @@ $_SESSION['window'] = 5;
 
         <h3 style="text-align: center; margin: 24px">Hoặc xuất nhiều data hơn</h3>
 
-        <form method="POST" class="form-export" action="./excel/export.php">
+        <form method="POST" class="form-export form-group" id="form-export" action="./excel/export.php">
           <label for="limit">Nhập số lượng cần xuất(tối đa):</label>
-          <input name="limit" class="" id="limit">
-          <input type="submit" id="submit" name="submit" class="btn btn-primary" value="Xuất ra Excel" />
+          <input name="limit" class="form-control" id="limit" rules="required|number">
+          <span class="form-message"></span>
+          <button class="btn-submit" type="submit">Xuất ra Excel</button>
         </form>
 
       </div>
@@ -112,7 +113,7 @@ $_SESSION['window'] = 5;
 
       <script type="module">
         import Validator from "../assets/js/validator.js"
-        const formAdd = new Validator('#form-add')
+        const formExport = new Validator('#form-export')
       </script>
 </body>
 

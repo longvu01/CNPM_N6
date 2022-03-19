@@ -19,6 +19,9 @@ function Validator(formSelector) {
       const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
       return regex.test(value) ? undefined : 'Trường này phải là email';
     },
+    number(value) {
+      return Number.isFinite(value) ? undefined : 'Trường này phải là số dương';
+    },
     min(min) {
       return function (value) {
         return value.length >= min
@@ -161,12 +164,14 @@ function Validator(formSelector) {
           // Gọi lại hàm onSubmit và trả về kèm các giá trị của form
           this.onSubmit(formValues);
         } else {
+          console.log(formElement);
           formElement.submit();
         }
       } else
         showToast({
           title: 'Thiếu thông tin!',
-          message: 'Bạn cần nhập đủ những trường bắt buộc',
+          message:
+            'Bạn cần nhập đủ những trường bắt buộc hoặc chính xác yêu cầu',
           type: 'warning',
           duration: 5000,
         });
