@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 15, 2022 at 02:42 PM
+-- Generation Time: Mar 19, 2022 at 02:53 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.21
 
@@ -22,65 +22,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `quan_ly_hang_hoa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `quan_ly_hang_hoa`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chi_tiet_hoa_don_nhap_kho`
---
-
-DROP TABLE IF EXISTS `chi_tiet_hoa_don_nhap_kho`;
-CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don_nhap_kho` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_hoa_don_nhap_kho` int(11) NOT NULL,
-  `ma_hang_hoa` int(11) NOT NULL,
-  `so_luong` int(11) NOT NULL,
-  `don_gia` int(11) NOT NULL,
-  `vi_tri_kho` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`),
-  KEY `ma_hoa_don_nhap_kho` (`ma_hoa_don_nhap_kho`),
-  KEY `ma_hang_hoa` (`ma_hang_hoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `chi_tiet_hoa_don_nhap_kho`
---
-
-INSERT INTO `chi_tiet_hoa_don_nhap_kho` (`ma`, `ma_hoa_don_nhap_kho`, `ma_hang_hoa`, `so_luong`, `don_gia`, `vi_tri_kho`) VALUES
-(1, 1, 3, 10, 20000000, 'Thái Hà'),
-(2, 2, 5, 20, 70000, 'Cảng'),
-(3, 3, 6, 1, 10000, 'Cảng'),
-(4, 4, 8, 2, 100000, 'Củ chi'),
-(5, 5, 4, 5, 450000, 'Cảng');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chi_tiet_hoa_don_xuat_kho`
---
-
-DROP TABLE IF EXISTS `chi_tiet_hoa_don_xuat_kho`;
-CREATE TABLE IF NOT EXISTS `chi_tiet_hoa_don_xuat_kho` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_hoa_don_xuat_kho` int(11) NOT NULL,
-  `ma_hang_hoa` int(11) NOT NULL,
-  `so_luong` int(11) NOT NULL,
-  `vi_tri_kho` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`ma`),
-  KEY `ma_hoa_don_xuat_kho` (`ma_hoa_don_xuat_kho`),
-  KEY `ma_hang_hoa` (`ma_hang_hoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `chi_tiet_hoa_don_xuat_kho`
---
-
-INSERT INTO `chi_tiet_hoa_don_xuat_kho` (`ma`, `ma_hoa_don_xuat_kho`, `ma_hang_hoa`, `so_luong`, `vi_tri_kho`) VALUES
-(1, 1, 7, 10, 'Củ chi'),
-(2, 2, 3, 50, 'Thái Hà'),
-(3, 3, 6, 10, 'Cảng'),
-(4, 4, 10, 2, 'Thái Hà'),
-(5, 5, 5, 30, 'Cảng');
 
 -- --------------------------------------------------------
 
@@ -122,60 +63,6 @@ INSERT INTO `hang_hoa` (`ma`, `ten_hang`, `gia_nhap`, `gia_ban`, `img_link`, `so
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hoa_don_nhap_kho`
---
-
-DROP TABLE IF EXISTS `hoa_don_nhap_kho`;
-CREATE TABLE IF NOT EXISTS `hoa_don_nhap_kho` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_nhan_vien` int(11) NOT NULL,
-  `ngay_nhap` date NOT NULL,
-  `ma_nha_cung_cap` int(11) NOT NULL,
-  PRIMARY KEY (`ma`),
-  KEY `ma_nha_cung_cap` (`ma_nha_cung_cap`),
-  KEY `ma_nhan_vien` (`ma_nhan_vien`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `hoa_don_nhap_kho`
---
-
-INSERT INTO `hoa_don_nhap_kho` (`ma`, `ma_nhan_vien`, `ngay_nhap`, `ma_nha_cung_cap`) VALUES
-(1, 1, '2022-02-11', 1),
-(2, 3, '2022-03-01', 1),
-(3, 1, '2022-01-08', 2),
-(4, 4, '2022-02-23', 3),
-(5, 3, '2022-02-05', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hoa_don_xuat_kho`
---
-
-DROP TABLE IF EXISTS `hoa_don_xuat_kho`;
-CREATE TABLE IF NOT EXISTS `hoa_don_xuat_kho` (
-  `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ma_nhan_vien` int(11) NOT NULL,
-  `ngay_xuat` date NOT NULL,
-  PRIMARY KEY (`ma`),
-  KEY `ma_nhan_vien` (`ma_nhan_vien`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `hoa_don_xuat_kho`
---
-
-INSERT INTO `hoa_don_xuat_kho` (`ma`, `ma_nhan_vien`, `ngay_xuat`) VALUES
-(1, 1, '2022-03-14'),
-(2, 3, '2022-03-14'),
-(3, 4, '2022-03-14'),
-(4, 1, '2022-03-14'),
-(5, 3, '2022-03-14');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `loai_hang`
 --
 
@@ -204,16 +91,14 @@ INSERT INTO `loai_hang` (`ma`, `ten_loai_hang`) VALUES
 DROP TABLE IF EXISTS `nhan_vien`;
 CREATE TABLE IF NOT EXISTS `nhan_vien` (
   `ma` int(11) NOT NULL AUTO_INCREMENT,
-  `ten_dang_nhap` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mat_khau` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ho_ten` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sdt` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngay_sinh` date DEFAULT NULL,
   `dia_chi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `quyen` bit(1) NOT NULL DEFAULT b'0',
   `gioi_tinh` bit(1) NOT NULL,
   `luong` int(11) DEFAULT NULL,
+  `id_tai_khoan` int(11) NOT NULL,
   PRIMARY KEY (`ma`),
   UNIQUE KEY `email` (`email`,`sdt`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -222,12 +107,10 @@ CREATE TABLE IF NOT EXISTS `nhan_vien` (
 -- Dumping data for table `nhan_vien`
 --
 
-INSERT INTO `nhan_vien` (`ma`, `ten_dang_nhap`, `mat_khau`, `ho_ten`, `sdt`, `email`, `ngay_sinh`, `dia_chi`, `quyen`, `gioi_tinh`, `luong`) VALUES
-(1, 'admin', 'admin', 'Đặng Thanh Tùng', '099898989', 'thanhtung@gmail.com', '2004-03-01', 'Thanh Trì, Hà Nội', b'1', b'0', 2000),
-(3, 'tendn', 'matkhau', 'hoten', 'sdt', 'a@b.com', '2018-12-23', 'diachi', b'0', b'1', 0),
-(4, 'admin1', 'admin1', 'Hoàng Tiến Trường', '0123912523', 'tientruong@gmail.com', '2004-01-01', 'Hà Nội', b'0', b'1', 1000),
-(5, 'minhtu', 'minh01', 'Đặng Minh Tú', '0123471233', 'minhtu@gmail.com', '2001-12-12', 'Hà Nội', b'0', b'1', 1000),
-(6, 'longvu', 'longvu01', 'Lê Long Vũ', '01239125231', 'vu@gmail.com', '2001-12-12', 'Hà Nội', b'0', b'1', 1000);
+INSERT INTO `nhan_vien` (`ma`, `ho_ten`, `sdt`, `email`, `ngay_sinh`, `dia_chi`, `gioi_tinh`, `luong`, `id_tai_khoan`) VALUES
+(4, 'Hoàng Tiến Trường', '0123912523', 'tientruong@gmail.com', '2004-01-01', 'Hà Nội', b'1', 1000, 0),
+(5, 'Đặng Minh Tú', '0123471233', 'minhtu@gmail.com', '2001-12-12', 'Hà Nội', b'1', 1000, 0),
+(6, 'Lê Long Vũ', '01239125231', 'vu@gmail.com', '2001-12-12', 'Hà Nội', b'1', 1000, 0);
 
 -- --------------------------------------------------------
 
@@ -255,42 +138,37 @@ INSERT INTO `nha_cung_cap` (`ma`, `ten_nha_cung_cap`, `sdt`, `email`, `dia_chi`,
 (2, 'Winmart', 555666999, 'winmart@gmail.com', 'Hải Phòng', 'Cảng'),
 (3, 'Phong Vũ', 231321253, 'phongvu@gmail.com', 'Hà Nội', 'Thái Hà');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tai_khoan`
+--
+
+DROP TABLE IF EXISTS `tai_khoan`;
+CREATE TABLE IF NOT EXISTS `tai_khoan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quyen` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tai_khoan`
+--
+
+INSERT INTO `tai_khoan` (`id`, `user_name`, `password`, `quyen`) VALUES
+(1, 'tung_dang', 'tung_dang', 1);
+
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `chi_tiet_hoa_don_nhap_kho`
---
-ALTER TABLE `chi_tiet_hoa_don_nhap_kho`
-  ADD CONSTRAINT `chi_tiet_hoa_don_nhap_kho_ibfk_1` FOREIGN KEY (`ma_hoa_don_nhap_kho`) REFERENCES `hoa_don_nhap_kho` (`ma`),
-  ADD CONSTRAINT `chi_tiet_hoa_don_nhap_kho_ibfk_2` FOREIGN KEY (`ma_hang_hoa`) REFERENCES `hang_hoa` (`ma`);
-
---
--- Constraints for table `chi_tiet_hoa_don_xuat_kho`
---
-ALTER TABLE `chi_tiet_hoa_don_xuat_kho`
-  ADD CONSTRAINT `chi_tiet_hoa_don_xuat_kho_ibfk_1` FOREIGN KEY (`ma_hoa_don_xuat_kho`) REFERENCES `hoa_don_xuat_kho` (`ma`),
-  ADD CONSTRAINT `chi_tiet_hoa_don_xuat_kho_ibfk_2` FOREIGN KEY (`ma_hang_hoa`) REFERENCES `hang_hoa` (`ma`);
 
 --
 -- Constraints for table `hang_hoa`
 --
 ALTER TABLE `hang_hoa`
   ADD CONSTRAINT `hang_hoa_ibfk_1` FOREIGN KEY (`ma_loai_hang`) REFERENCES `loai_hang` (`ma`);
-
---
--- Constraints for table `hoa_don_nhap_kho`
---
-ALTER TABLE `hoa_don_nhap_kho`
-  ADD CONSTRAINT `hoa_don_nhap_kho_ibfk_1` FOREIGN KEY (`ma_nha_cung_cap`) REFERENCES `nha_cung_cap` (`ma`),
-  ADD CONSTRAINT `hoa_don_nhap_kho_ibfk_2` FOREIGN KEY (`ma_nhan_vien`) REFERENCES `nhan_vien` (`ma`);
-
---
--- Constraints for table `hoa_don_xuat_kho`
---
-ALTER TABLE `hoa_don_xuat_kho`
-  ADD CONSTRAINT `hoa_don_xuat_kho_ibfk_1` FOREIGN KEY (`ma_nhan_vien`) REFERENCES `nhan_vien` (`ma`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
