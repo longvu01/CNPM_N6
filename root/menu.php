@@ -54,12 +54,12 @@ mysqli_close($conn);
           </a>
         </li>
         <li class="nav-link hide-user">
-          <a href="../manage/delete.php?ma=<?php echo $user['ma'] ?>">
+          <a href="../manage/delete.php?id=<?php echo $user['ma'] ?>">
             <span class="text nav-text">Xoá tài khoản</span>
           </a>
         </li>
         <li class="nav-link hide-user">
-          <a href="../manage/update.php?ma=<?php echo $user['ma'] ?>">
+          <a href="../manage/update.php?id=<?php echo $user['ma'] ?>">
             <span class="text nav-text">Sửa thông tin</span>
           </a>
         </li>
