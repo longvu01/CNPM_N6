@@ -1,6 +1,6 @@
 .container-staff
 {
-    min-height: 10vh;
+    min-height: 100vh;
     width: auto;
     background-color: #e4e9f7;
     display: flex;
@@ -86,4 +86,12 @@
 {
     background-color: #110a57;
     color: white;
+}
+.staff-no
+{
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 10 0 10 0;
+    font-weight: 600;
 }

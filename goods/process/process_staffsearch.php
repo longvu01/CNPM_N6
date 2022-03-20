@@ -54,7 +54,7 @@
     $output.="</table>";
     if(empty($result))
     {
-        echo "Không có kết quả phù hợp";
+        echo "<div class='staff-no'>Không có kết quả phù hợp</div>";
     }
     else
     {

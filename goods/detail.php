@@ -51,7 +51,13 @@
             <div class="title">
                 <h2>Danh sách hàng hoá</h2>
             </div>
+
             <div class="table">
+            <?php if(empty($result))
+                    {
+                        echo "<div class='staff-no'>Không có kết quả phù hợp</div>";
+                    }
+                    else{?>
                 <table style="width:100%">
                     <tr>
                         <th>Tên hàng</th>
@@ -63,11 +69,7 @@
                         <th>Hành động</th>
                     </tr>
                     <?php 
-                    if(empty($result))
-                    {
-                        echo "Không có kết quả phù hợp";
-                    }
-                    else{
+
 
                     foreach($result as $item){?>
                     <tr>
