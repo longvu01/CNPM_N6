@@ -1,7 +1,7 @@
 <?php
+    include('connect2.php');
     session_start();
 
-    include('connect2.php');
     $message = "";
     if(isset($_POST['login'])){
         if(empty($_POST['user_name']) && empty($_POST['password']))
@@ -23,14 +23,10 @@
             if($count > 0)
             {
                 $_SESSION['user_name'] = $_POST['user_name'];
-                $sql2 = "SELECT * from tai_khoan where user_name=:user_name";
-                $user2 = $conn->prepare($sql2);
-                $user2->execute(
-                    array(
-                        'quyen' => $_GET['quyen']
-                    )
-                );
-                header("location:search.php");
+                if($_SESSION['user_name'] == 1){
+                    $message = "ban la admin";
+                }
+                header("location:./goods/search.php");
             }
             else{
                 $message = '<label>Bạn chưa nhập tài khoản hoặc mật khẩu</label>';
