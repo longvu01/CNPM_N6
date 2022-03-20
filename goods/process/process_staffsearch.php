@@ -28,7 +28,7 @@
     $output.="        <th>Email</th>";
     $output.="        <th>Ngày sinh</th>";
     $output.="        <th>Địa chỉ</th>";
-    $output.="        <th>Quyền</th>";
+    // $output.="        <th>Quyền</th>";
     $output.="        <th>Hành động</th>";
     $output.="    </tr>";
     $output.="</thead>";
@@ -41,12 +41,12 @@
     $output.="<td>". $item['email']."</td>";
     $output.="<td>". $item['ngay_sinh']."</td>";
     $output.="<td>". $item['dia_chi']."</td>";
+    // $output.="<td>";
+    // // if($item['quyen']==1){$output.= "QTV";}else{$output.= "NV";};
+    // $output.="</td>";
     $output.="<td>";
-    if($item['quyen']==1){$output.= "QTV";}else{$output.= "NV";};
-    $output.="</td>";
-    $output.="<td>";
-    $output.="<a href=><i class='bx bx-edit-alt'></i></a>";
-    $output.="<a href=><i class='bx bx-trash'></i></a>";
+    $output.="<a href='staff.php?id= ".$item['ma']." '><i class='bx bx-edit-alt staff-button'></i></a>";
+    $output.="<a href='staff.php?id= ".$item['ma']."'><i class='bx bx-trash staff-button'></i></a>";
     $output.="</td>";   
     $output.="</tr>";
     }
