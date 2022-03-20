@@ -36,7 +36,6 @@ $arr_info['window'] = $window;
 
 foreach ($result as $each) {
   $arr[$i]['ten_hang'] = $each['ten_hang'];
-  $arr[$i]['img_link'] = $each['img_link'];
   $arr[$i]['so_luong_da_ban'] = $each['so_luong_da_ban'];
   $arr[$i]['so_luong_ton'] = $each['so_luong_ton'];
   $i++;
