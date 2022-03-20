@@ -2,20 +2,29 @@
     session_start();
     require_once("../connect.php");
     require_once("../lib_db.php");
-
+    $temp = isset($_POST['goods-search']) ? $_POST['goods-search'] : '';
+    if(empty($temp)){
+        $name = '';   
+    }else
+    {
+        $name = "where ten_hang like '%{$temp}%'";
+    }
     // $_SESSION['id'] = 1;
     // $id = $_SESSION['id'];
     
     // $id = $_GET['id'];
-    $sql = "select * from hang_hoa ";
+    $sql = "select * from hang_hoa $name";
+
     
-    // die($sql);
-    $item = select_one($sql);
-    $loai_hang = $item['ma_loai_hang'];
+    //die($sql);
+    $result = select_list($sql);
+
+    // var_dump($item);
+    // die();
+    // $loai_hang = $item['ma_loai_hang'];
     // die($item);
     // lay ten nha cc
     // lay ten loai hang
-    $sql2 = "select * from loai_hang where ten_loai_hang = '$loai_hang'";
     
     mysqli_close($conn);
 ?>
@@ -42,8 +51,14 @@
             <div class="title">
                 <h2>Danh sách hàng hoá</h2>
             </div>
+
             <div class="table">
-                <table>
+            <?php if(empty($result))
+                    {
+                        echo "<div class='staff-no'>Không có kết quả phù hợp</div>";
+                    }
+                    else{?>
+                <table style="width:100%">
                     <tr>
                         <th>Tên hàng</th>
                         <th>Mã hàng</th>
@@ -53,6 +68,10 @@
                         <th>Loại hàng</th>
                         <th>Hành động</th>
                     </tr>
+                    <?php 
+
+
+                    foreach($result as $item){?>
                     <tr>
                         <th><?php echo $item['ten_hang'] ?></th>
                         <th><?= $item['gia_nhap'] ?></th>
@@ -66,6 +85,7 @@
                             <a href=""><i class='bx bx-detail'></i></a>
                         </th>
                     </tr>
+                    <?php }} ?>
                 </table>
             </div>
         </div>

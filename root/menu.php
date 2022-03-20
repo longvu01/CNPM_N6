@@ -49,7 +49,7 @@ mysqli_close($conn);
           </a>
         </li>
         <li class="nav-link hide-user">
-          <a href="../manage/search.php">
+          <a href="../goods/staff.php">
             <span class="text nav-text">Xem/ Tìm kiếm</span>
           </a>
         </li>
@@ -76,7 +76,7 @@ mysqli_close($conn);
           </a>
         </li>
         <li class="nav-link hide-roots">
-          <a href="../goods/search.php">
+          <a href="../goods/staff.php">
             <span class="text nav-text">Xem/ Tìm kiếm</span>
           </a>
         </li>
