@@ -128,9 +128,6 @@ const init = (() => {
       html += `
         <tr>
           <td>${item.ten_hang}</td>
-          <td>
-            <img src="../../goods/photos/${item.img_link}">
-          </td>
           <td>${item.so_luong_da_ban}</td>
           <td>${item.so_luong_ton}</td>
         </tr>
