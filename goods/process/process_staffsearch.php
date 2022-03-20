@@ -45,8 +45,8 @@
     // // if($item['quyen']==1){$output.= "QTV";}else{$output.= "NV";};
     // $output.="</td>";
     $output.="<td>";
-    $output.="<a href='staff.php?id= ".$item['ma']." '><i class='bx bx-edit-alt staff-button'></i></a>";
-    $output.="<a href='staff.php?id= ".$item['ma']."'><i class='bx bx-trash staff-button'></i></a>";
+    $output.="<a href='staff.php?id=".$item['ma']." '><i class='bx bx-edit-alt staff-button'></i></a>";
+    $output.="<a href='staff.php?id=".$item['ma']."'><i class='bx bx-trash staff-button'></i></a>";
     $output.="</td>";   
     $output.="</tr>";
     }
