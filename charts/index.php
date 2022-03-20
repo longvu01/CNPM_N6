@@ -8,7 +8,7 @@ $_SESSION['window'] = 5;
 
 <!-- Start HTML -->
 <?php require_once('../root/top.php') ?>
-<?php top('Sửa thông tin nhân viên') ?>
+<?php top('Thống kê số lượng') ?>
 <link rel='stylesheet' href='./css/chart_full.css'>
 <link rel='stylesheet' href='./css/chart_detail.css'>
 <link rel='stylesheet' href='./css/table_charts.css'>
@@ -73,7 +73,6 @@ $_SESSION['window'] = 5;
         <table id="table">
           <tr>
             <th>Tên hàng hóa</th>
-            <th>Ảnh</th>
             <th>Số lượng bán</th>
             <th>Số lượng tồn</th>
           <tr id="row">

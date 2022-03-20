@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      'use strict';
+
+      const RANDOM_TEXTS = [
+        'asdf',
+        'dfgj',
+        'dioghjui',
+        'weroiog',
+        'qwuefghi',
+        'fghdfghue',
+        'fgh',
+      ];
+
+      const getRandomText = () =>
+        RANDOM_TEXTS[Math.trunc(Math.random() * RANDOM_TEXTS.length)];
+
+      const getRandomNumber = () => Math.ceil(Math.random() * 500) + 500;
+
+      //
+      const getRandomDay = () =>
+        Math.ceil(Math.random() * 28)
+          .toString()
+          .padStart(2, '0');
+
+      // 2 -> 3
+      const getRandomMonth = () =>
+        (Math.ceil(Math.random() * 2) + 1).toString().padStart(2, '0');
+
+      const addRandomGoods = (
+        tenHang,
+        giaNhap,
+        giaBan,
+        slDaBan,
+        slTon,
+        createAt
+      ) => {
+        const url = './add_random_goods.php';
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            tenHang,
+            giaNhap,
+            giaBan,
+            slDaBan,
+            slTon,
+            createAt,
+          }),
+        };
+        fetch(url, options);
+      };
+
+      setInterval((name, number) => {
+        const rdText = getRandomText();
+        const rdNumber = getRandomNumber();
+
+        addRandomGoods(
+          `Hàng hóa ${rdText} ${rdNumber}`,
+          rdNumber,
+          rdNumber * 1.5,
+          rdNumber * Math.random(),
+          rdNumber * Math.random(),
+          `2022-${getRandomMonth()}-${getRandomDay()}`
+        );
+      }, 200);
+    </script>
+  </body>
+</html>

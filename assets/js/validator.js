@@ -20,7 +20,9 @@ function Validator(formSelector) {
       return regex.test(value) ? undefined : 'Trường này phải là email';
     },
     number(value) {
-      return Number.isFinite(value) ? undefined : 'Trường này phải là số dương';
+      return Number.isFinite(+value) && +value > 0
+        ? undefined
+        : 'Trường này phải là số dương';
     },
     min(min) {
       return function (value) {
