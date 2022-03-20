@@ -471,3 +471,6 @@ td {
   cursor: pointer;
   background-color: rgb(136, 224, 238);
 }
+.hideid{
+  display: none;
+}
