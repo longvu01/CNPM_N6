@@ -48,6 +48,7 @@ foreach ($resultSold as $each) {
   $arr[$each['day']][0] = (int)$each['tong_da_ban'];
 }
 
+// Tồn
 $sql = "SELECT DATE_FORMAT(create_at, '%e-%m') as 'day',
   sum(so_luong_ton) as tong_ton
   from hang_hoa 

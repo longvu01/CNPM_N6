@@ -28,7 +28,7 @@ $sql = "SELECT
   DATE_FORMAT(hang_hoa.create_at, '%e-%m') AS 'date',
   SUM(so_luong_da_ban) AS 'tong_ban'
 FROM hang_hoa
-WHERE  DATE(hang_hoa.create_at) >= CURDATE() - INTERVAL 7 DAY
+WHERE DATE(hang_hoa.create_at) >= CURDATE() - INTERVAL 7 DAY
 GROUP BY DATE_FORMAT(hang_hoa.create_at, '%e-%m')
 ORDER BY so_luong_da_ban DESC LIMIT 10";
 // die($sql);
@@ -83,6 +83,4 @@ foreach ($result as $each) {
   ];
 }
 
-$object = json_encode([$arr, $arr2]);
-
-echo $object;
+echo json_encode([$arr, $arr2]);

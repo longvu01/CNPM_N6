@@ -17,7 +17,14 @@
         'weroiog',
         'qwuefghi',
         'fghdfghue',
-        'fgh',
+        'fghfsdf',
+        'ghjey',
+        'gfhjjk',
+        'lpokp',
+        'oikopm',
+        'moqfnwf',
+        'alsvnias',
+        'qwefjiqwf',
       ];
 
       const getRandomText = () =>
@@ -25,15 +32,9 @@
 
       const getRandomNumber = () => Math.ceil(Math.random() * 500) + 500;
 
-      //
-      const getRandomDay = () =>
-        Math.ceil(Math.random() * 28)
-          .toString()
-          .padStart(2, '0');
-
+      const getRandomDay = () => Math.ceil(Math.random() * 30);
       // 2 -> 3
-      const getRandomMonth = () =>
-        (Math.ceil(Math.random() * 2) + 1).toString().padStart(2, '0');
+      const getRandomMonth = () => Math.ceil(Math.random() * 2) + 1;
 
       const addRandomGoods = (
         tenHang,
@@ -64,16 +65,26 @@
       setInterval((name, number) => {
         const rdText = getRandomText();
         const rdNumber = getRandomNumber();
+        const randomMonth = getRandomMonth();
+        let randomDay = getRandomDay();
+        if (randomMonth === 2)
+          while (randomDay > 28) randomDay = getRandomDay();
 
+        if (randomMonth === 3)
+          while (randomDay > 21) randomDay = getRandomDay();
+
+        const randomDate = `2022-${randomMonth
+          .toString()
+          .padStart(2, '0')}-${randomDay.toString().padStart(2, '0')}`;
         addRandomGoods(
           `Hàng hóa ${rdText} ${rdNumber}`,
           rdNumber,
           rdNumber * 1.5,
           rdNumber * Math.random(),
           rdNumber * Math.random(),
-          `2022-${getRandomMonth()}-${getRandomDay()}`
+          randomDate
         );
-      }, 200);
+      }, 100);
     </script>
   </body>
 </html>
