@@ -17,14 +17,16 @@
 
     
     //die($sql);
+    $array_loai_hang = array();
     $result = select_list($sql);
 
-    // var_dump($item);
-    // die();
-    // $loai_hang = $item['ma_loai_hang'];
-    // die($item);
-    // lay ten nha cc
-    // lay ten loai hang
+    for ($i=0; $i < count($result); $i++) { 
+        $x = $result[$i]["ma_loai_hang"];
+        $sql1 = "select * from loai_hang where ma = '$x'";
+        $a  = select_one($sql1);
+        $array_loai_hang[$i] = $a["ten_loai_hang"];
+    }
+
     
     mysqli_close($conn);
 ?>
@@ -71,14 +73,14 @@
                     <?php 
 
 
-                    foreach($result as $item){?>
+                    for($i=0; $i < count($result); $i++){?>
                     <tr>
-                        <th><?php echo $item['ten_hang'] ?></th>
-                        <th><?= $item['gia_nhap'] ?></th>
-                        <th><?= $item['gia_ban'] ?></th>
-                        <th><?= $item['so_luong_da_ban'] ?></th>
-                        <th><?= $item['so_luong_ton'] ?></th>
-                        <th>Ten loai hang</th>
+                        <th><?php echo $result[$i]['ten_hang'] ?></th>
+                        <th><?= $result[$i]['gia_nhap'] ?></th>
+                        <th><?= $result[$i]['gia_ban'] ?></th>
+                        <th><?= $result[$i]['so_luong_da_ban'] ?></th>
+                        <th><?= $result[$i]['so_luong_ton'] ?></th>
+                        <th><?php echo $array_loai_hang[$i] ?></th>
                         <th>
                             <a href=""><i class='bx bx-edit-alt'></i></a>
                             <a href=""><i class='bx bx-trash'></i></a>

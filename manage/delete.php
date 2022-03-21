@@ -117,14 +117,14 @@ mysqli_close($conn);
           </div>
           <div class="form-group" >
             <label class="form-label-1">Mã nhân viên</label>
-            <input name="id" disabled value = "<?php echo $id ?>"  class="form-control form-style"/>
+            <input name="id"  value = "<?php echo $id ?>"  class="form-control form-style"/>
             <span class="form-message"></span>
           </div>
           
           
-          <input name="add"  value = "<?php if(empty($nhanvien)){echo 0;} else{echo 1;} ?>" class = "hideid"/>
+    
           
-          <button class="btn-submit" type="submit" >Xoá</button>
+          <button class="btn-submit" onclick = postid(<?php echo $id ?>) type="submit" >Xoá</button>
         </form>
       </div>
 
@@ -134,7 +134,10 @@ mysqli_close($conn);
 
   <script type="module">
     import Validator from "../assets/js/validator.js"
-    const formAdd = new Validator('#form-add')
+    const formAdd = new Validator('#form-add');
+    function postid(id){
+      alert(id)
+    };
   </script>
 </body>
 

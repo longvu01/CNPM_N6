@@ -136,17 +136,6 @@ mysqli_close($conn);
         const formAdd = new Validator('#form-add')
       </script>
 
-
-  <?php require_once('../root/footer.php') ?>
-  <script src="../assets/js/toast_msg.js"></script>
-  <?php require_once('../root/show_toast.php') ?>
-
-  <script type="module">
-    import Validator from "../assets/js/validator.js"
-    const formAdd = new Validator('#form-add')
-  </script>
-  <script>
-  </script>
 </body>
 
 </html>
