@@ -53,17 +53,17 @@ mysqli_close($conn);
         <form class="form-edit" id="form-add" method="POST" action="./process/process_insert.php">
           <div class="form-group">
             <label class="form-label-1">Tên đăng nhập</label>
-            <input name="ten_dang_nhap" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
+            <input name="user_name" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Mật khẩu</label>
-            <input name="mat_khau" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required" />
+            <input name="password" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="form-label-1">Họ và tên</label>
             <input name="ho_ten" placeholder="Nhập họ và tên nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
@@ -110,8 +110,8 @@ mysqli_close($conn);
             <label class="form-label-1">Lương</label>
             <input name="luong" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
-          </div>
-          <button class="btn-submit" name = "edit" type="submit">Sửa thông tin</button>
+          </div> -->
+          <button class="btn-submit" name="edit" type="submit">Sửa thông tin</button>
         </form>
       </div>
 
