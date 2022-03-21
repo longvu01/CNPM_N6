@@ -84,7 +84,7 @@ mysqli_close($conn);
                                         echo '';
                                       } else {
                                         echo $nhanvien["sdt"];
-                                      } ?>" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required" />
+                                      } ?>" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required|number" />
             <span class="form-message"></span>
           </div>
 
@@ -94,7 +94,7 @@ mysqli_close($conn);
                                           echo '';
                                         } else {
                                           echo $nhanvien["email"];
-                                        } ?>" placeholder="Nhập email nhân viên" class="form-control form-style" rules="required" />
+                                        } ?>" placeholder="Nhập email nhân viên" class="form-control form-style" rules="required|email" />
             <span class="form-message"></span>
           </div>
 
@@ -141,10 +141,16 @@ mysqli_close($conn);
                                           echo '';
                                         } else {
                                           echo $nhanvien["luong"];
-                                        } ?>" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
+                                        } ?>" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required|number" />
             <span class="form-message"></span>
           </div>
-          <input name="id" value="<?php echo $id ?>" class="hideid" />
+          <div class="form-group">
+            <label class="form-label-1">Mã nhân viên</label>
+            <input name="id" disabled value="<?php echo $id ?>" class="form-control form-style" />
+            <span class="form-message"></span>
+          </div>
+
+
           <input name="add" value="<?php if (empty($nhanvien)) {
                                       echo 0;
                                     } else {
