@@ -73,6 +73,6 @@ $_SESSION['info_title'] = "Thành công!";
 $_SESSION['info_message'] = "Bạn đã thêm nhân viên mới thành công!";
 $_SESSION['info_type'] = "success";
 
-header('Location: ../search.php');
+header('Location:/CNPM_N6/goods/staff.php');
 
 mysqli_close($conn);

@@ -169,6 +169,10 @@ mysqli_close($conn);
         import Validator from "../assets/js/validator.js"
         const formAdd = new Validator('#form-add')
       </script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed8fba90b6c04156dc187747ca9614b27ea49556
 </body>
 
 </html>

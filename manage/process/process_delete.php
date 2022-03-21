@@ -9,10 +9,10 @@ $_SESSION['info_title'] = "Thành công!";
 $_SESSION['info_message'] = "Bạn đã xóa nhân viên thành công!";
 $_SESSION['info_type'] = "success";
 $id = $_POST["id"];
-$sql = "delete from nhan_vien where id_tai_khoan = '$id'";
+$sql = "delete from nhan_vien where id_tai_khoan = $id";
 mysqli_query($conn,$sql);
-$sql1 = "delete from tai_khoan where id = '$id'";
+$sql1 = "delete from tai_khoan where id = $id";
 mysqli_query($conn,$sql1);
-header('Location: ../search.php');
+header('Location:/CNPM_N6/goods/staff.php');
 
 mysqli_close($conn);
