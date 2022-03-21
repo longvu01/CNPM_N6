@@ -29,7 +29,7 @@ $sql = "SELECT
   SUM(so_luong_da_ban) AS 'tong_ban'
 FROM hang_hoa
 WHERE DATE(hang_hoa.create_at) >= CURDATE() - INTERVAL 7 DAY
-GROUP BY DATE_FORMAT(hang_hoa.create_at, '%e-%m')
+GROUP BY DATE_FORMAT(hang_hoa.create_at, '%e-%m'), ma, ten_hang
 ORDER BY so_luong_da_ban DESC LIMIT 10";
 // die($sql);
 $result = mysqli_query($conn, $sql);
