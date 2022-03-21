@@ -17,7 +17,9 @@ $time_start = date("$start_year-m-d");
 $time_end = date("$end_year-m-d");
 
 
-if(isset($_GET["id"])){$id = $_GET["id"];}
+if (isset($_GET["id"])) {
+  $id = $_GET["id"];
+}
 $sql = "select * from nhan_vien where id_tai_khoan = '$id'";
 $sql1 = "select * from tai_khoan where id = '$id'";
 $nhanvien = select_one($sql);
@@ -56,68 +58,100 @@ mysqli_close($conn);
 
           <div class="form-group">
             <label class="form-label-1">Tên đăng nhập</label>
-            <input name="ten_dang_nhap"  value = "<?php echo $nhanvien1["user_name"] ?>" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
+            <input name="ten_dang_nhap" value="<?php echo $nhanvien1["user_name"] ?>" placeholder="Nhập tên đăng nhập nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Mật khẩu</label>
-            <input name="mat_khau" value = "<?php echo $nhanvien1["password"] ?>" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required" />
+            <input name="mat_khau" value="<?php echo $nhanvien1["password"] ?>" placeholder="Nhập mật khẩu nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Họ và tên</label>
-            <input name="ho_ten" value = "<?php if(empty($nhanvien)){echo '';}else{echo $nhanvien["ho_ten"];}  ?>" placeholder="Nhập họ và tên nhân viên" class="form-control form-style" rules="required" />
+            <input name="ho_ten" value="<?php if (empty($nhanvien)) {
+                                          echo '';
+                                        } else {
+                                          echo $nhanvien["ho_ten"];
+                                        }  ?>" placeholder="Nhập họ và tên nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Số điện thoại</label>
-            <input name="sdt" value = "<?php if(empty($nhanvien)){echo '';}else{echo $nhanvien["sdt"];} ?>" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required" />
+            <input name="sdt" value="<?php if (empty($nhanvien)) {
+                                        echo '';
+                                      } else {
+                                        echo $nhanvien["sdt"];
+                                      } ?>" placeholder="Nhập số điện thoại nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Email</label>
-            <input name="email" value = "<?php if(empty($nhanvien)){echo '';}else{echo $nhanvien["email"];} ?>" placeholder="Nhập email nhân viên" class="form-control form-style" rules="required" />
+            <input name="email" value="<?php if (empty($nhanvien)) {
+                                          echo '';
+                                        } else {
+                                          echo $nhanvien["email"];
+                                        } ?>" placeholder="Nhập email nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Ngày sinh</label>
-            <input type="date" value = "<?php if(empty($nhanvien)){echo '';}else{echo $nhanvien["ngay_sinh"];} ?>" name="ngay_sinh" min=<?= $time_start ?> max=<?= $time_end ?> class="form-control form-style" rules="required">
+            <input type="date" value="<?php if (empty($nhanvien)) {
+                                        echo '';
+                                      } else {
+                                        echo $nhanvien["ngay_sinh"];
+                                      } ?>" name="ngay_sinh" min=<?= $time_start ?> max=<?= $time_end ?> class="form-control form-style" rules="required">
             <span class="form-message"></span>
           </div>
 
           <div class="form-group">
             <label class="form-label-1">Địa chỉ</label>
-            <input name="dia_chi" value = "<?php if(empty($nhanvien)){echo '';} else{echo $nhanvien["dia_chi"];} ?>" placeholder="Nhập địa chỉ nhân viên" class="form-control form-style" rules="required" />
+            <input name="dia_chi" value="<?php if (empty($nhanvien)) {
+                                            echo '';
+                                          } else {
+                                            echo $nhanvien["dia_chi"];
+                                          } ?>" placeholder="Nhập địa chỉ nhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
 
           <div class="form-group mt-4">
             <label class="form-label-1">Chọn giới tính nhân viên</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gioi_tinh" value="male" id="male" <?php if(empty($nhanvien)){echo '';} elseif($nhanvien["gioi_tinh"] == 1) echo "checked" ?>>
+              <input class="form-check-input" type="radio" name="gioi_tinh" value="male" id="male" <?php if (empty($nhanvien)) {
+                                                                                                      echo '';
+                                                                                                    } elseif ($nhanvien["gioi_tinh"] == 1) echo "checked" ?>>
               <label class="form-check-label" for="male">Nam</label>
             </div>
 
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gioi_tinh" value="female" id="female" <?php if(empty($nhanvien)){echo '';} elseif($nhanvien["gioi_tinh"] == 0) echo "checked" ?>>
+              <input class="form-check-input" type="radio" name="gioi_tinh" value="female" id="female" <?php if (empty($nhanvien)) {
+                                                                                                          echo '';
+                                                                                                        } elseif ($nhanvien["gioi_tinh"] == 0) echo "checked" ?>>
               <label class="form-check-label" for="female">Nữ</label>
             </div>
           </div>
 
-          <div class="form-group" id = "123">
+          <div class="form-group" id="123">
             <label class="form-label-1">Lương</label>
-            <input name="luong" value = "<?php if(empty($nhanvien)){echo '';}else{echo $nhanvien["luong"];} ?>" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
+            <input name="luong" value="<?php if (empty($nhanvien)) {
+                                          echo '';
+                                        } else {
+                                          echo $nhanvien["luong"];
+                                        } ?>" placeholder="Nhập mức lương nnhân viên" class="form-control form-style" rules="required" />
             <span class="form-message"></span>
           </div>
-          <input name="id" value = "<?php echo $id ?>" class = "hideid"/>
-          <input name="add" value = "<?php if(empty($nhanvien)){echo 0;} else{echo 1;} ?>" class = "hideid"/>
-          
-          <button class="btn-submit" type="submit" >Hoàn tất</button>
+          <input name="id" value="<?php echo $id ?>" class="hideid" />
+          <input name="add" value="<?php if (empty($nhanvien)) {
+                                      echo 0;
+                                    } else {
+                                      echo 1;
+                                    } ?>" class="hideid" />
+
+          <button class="btn-submit" type="submit">Hoàn tất</button>
         </form>
       </div>
 
@@ -129,18 +163,6 @@ mysqli_close($conn);
         import Validator from "../assets/js/validator.js"
         const formAdd = new Validator('#form-add')
       </script>
-
-
-  <?php require_once('../root/footer.php') ?>
-  <script src="../assets/js/toast_msg.js"></script>
-  <?php require_once('../root/show_toast.php') ?>
-
-  <script type="module">
-    import Validator from "../assets/js/validator.js"
-    const formAdd = new Validator('#form-add')
-  </script>
-  <script>
-  </script>
 </body>
 
 </html>

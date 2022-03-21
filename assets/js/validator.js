@@ -22,7 +22,7 @@ function Validator(formSelector) {
     number(value) {
       return Number.isFinite(+value) && +value > 0
         ? undefined
-        : 'Trường này phải là số dương';
+        : 'Trường này phải là số hợp lệ';
     },
     min(min) {
       return function (value) {
